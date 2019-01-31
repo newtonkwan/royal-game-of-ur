@@ -1,0 +1,14 @@
+Things to complete for the royal game of ur project 
+
+- create the 3x4 version of the game that can be played by people in the terminal 
+- create a the 3x8 version of the game (with flowers) that can be played by two people in the terminal
+- create an agent that plays randomly.
+- create a version of the game that allows you to play against the random agent 
+- create an agent that plays the game with a few heuristics
+- create a version of the game that allows you to play against the agent that plays with a few heuristics 
+- create an agent that plays using optimal play (meaning pick the move with the highest probability of winning)
+- create an agent that learns to play optimally using reinforcement learning 
+
+Here we gooooo
+
+
