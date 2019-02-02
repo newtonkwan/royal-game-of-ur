@@ -12,21 +12,43 @@ def init_board():
 
 def game_rules():
 	print()
+	print("--------------------------------")
 	print("Welcome to the Royal Game of Ur!")
 	print("--------------------------------")
+	print()
 	print("How to Play")
-	print("This is a two-person race to the finish.")
-	print("Players will take turns rolling a die and moving their pieces.")
-	print("Black pieces are labeled with negative signs and white pieces are labeled with positive signs")
+	print("--------------------------------------------------------------------------------------------")
+	print("The Royal Game of Ur is two player race to the finish.")
+	print("Players will take turns rolling a die.")
+	print()
+	input("Press Enter to continue")
+	print()
+	print("This is the board")
+	print("   W1 W0 W3 W2")
+	print("   N1 N2 N3 N4")
+	print("   B1 B0 B3 B2")
+	print("Black's pieces will start from B0 and move from B0 -> B1 -> N1 -> N2 -> N3 -> N4 -> B2 -> B3")
+	print("White's pieces will start from W0 and move from W0 -> W1 -> N1 -> N2 -> N3 -> N4 -> W2 -> W3")
+	print()
+	input("Press Enter to continue")
+	print()
+	print("Tiles can only hold 1 piece, except the home and end tiles.")
+	print("If an enemy piece lands on your piece, then your piece is sent home.")
+	print()
+	input("Press Enter to continue")
+	print()
+	print("Each player will start with 2 pieces.")
+	print("White pieces are labeled with positive signs; black pieces are labeled with negative signs.")
 	print("Ex: 2 = two white pieces on the tile; -1 = one black piece on the tile; 0 = no pieces on tile")
-	print("--------------------------------")
+	print("--------------------------------------------------------------------------------------------")
+	print()
 	input("Press Enter to start the game!")
 
 def current_board_info(board):
 	# print current board nicely 
 	df_board = pd.DataFrame(board) 
 	print()
-	print(df_board)
+	print(df_board.to_string(index=False, header=False)) # prints w/o col or index
 	print()
 	return 
 
@@ -75,7 +97,7 @@ def show_possible_moves(moves):
 		print()
 		df = pd.DataFrame(moves[i])
 		print("Possible move", i+1)
-		print(df)
+		print(df.to_string(index=False, header=False))
 		print()
 	return
 
@@ -275,13 +297,10 @@ def possible_moves(player_turn, board, roll):
 
 	return poss_moves
 
-def play_game():
-	return
-
 def choose_move_num(moves):
 	while True: 
 		try:
-			move_num = int(input("Choose a move (Enter 1, 2, or 3, etc): "))
+			move_num = int(input("Choose a move (Enter move number): "))
 			if (move_num - 1) in range(len(moves)):
 				break
 			if (move_num - 1) not in range(len(moves)):
