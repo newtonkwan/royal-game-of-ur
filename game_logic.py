@@ -295,6 +295,17 @@ def choose_move(move_num, moves):
 	move = moves[move_num - 1]
 	return move
 
+def change_player(player):
+	if player == 'w':
+		new_player = 'b'
+		return new_player
+	if player == 'b':
+		new_player = 'w'
+		return new_player
+	return
+
+
+
 
 
 

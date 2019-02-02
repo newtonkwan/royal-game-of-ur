@@ -1,6 +1,6 @@
 # execute this file to play the game 
 
-from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move
+from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move, change_player
 
 game_rules()
 board = init_board() # initialize the board 
@@ -13,7 +13,6 @@ while True:
 
 	current_player_info(current_player) # show current player info 
 	current_board_info(current_board) # show current board info
-
 	input("Press Enter to roll")
 	current_roll = roll_die() # roll die 
 	current_die_info(current_roll) # show current die info
@@ -21,23 +20,16 @@ while True:
 	# roll a 0 
 	if current_roll == 0: 
 		print("--------------------------------")
-		if current_player == "w":
-			current_player = 'b'
-			continue
-		if current_player == "b":
-			current_player = 'w'
-			continue
+		current_player = change_player(current_player)
+		continue
 	
 	moves = possible_moves(current_player, current_board, current_roll) # gets possible moves 
+
 	# no possible moves 
 	if len(moves) == 0: 
 		print("No possible moves!")
-		if current_player == "w":
-			current_player = 'b'
-			continue
-		if current_player == "b":
-			current_player = 'w'
-			continue
+		current_player = change_player(current_player)
+		continue
 
 	show_possible_moves(moves) # show possible moves 
 	move_num = choose_move_num(moves) # choose the move number 
@@ -56,14 +48,7 @@ while True:
 		print("Black has won the game!")
 		break
 
-
-	if current_player == "b":
-		current_player = "w"
-		continue
-	if current_player == "w":
-		current_player = "b"
-		continue
-		
+	current_player = change_player(current_player) # end turn and change players 
 
 print("Thank you for playing!")
 
