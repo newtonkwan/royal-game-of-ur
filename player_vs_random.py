@@ -1,6 +1,6 @@
 # Run this file to to play against a randomly playing agent in 3x4, no flower, 0-2 die Ur 
 
-from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move, change_player, player_choose_color, play_again
+from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move, change_player, player_choose_color, play_again, player_win
 import random 
 import time
 
@@ -71,13 +71,8 @@ while True:
 
 	# player win condition 
 
-	if current_board[0,2] == 2:
-		print("White has won the game!")
-		current_board_info(current_board)
-		break
-	if current_board[2,2] == -2:
-		print("Black has won the game!")
-		current_board_info(current_board)
+	win_condition = player_win(current_board)
+	if win_condition == True:
 		break
 
 	current_player = change_player(current_player) # end turn and change players 

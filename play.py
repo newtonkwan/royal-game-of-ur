@@ -1,13 +1,16 @@
 # execute this file to play the game 
 
-from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move, change_player
+from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move, change_player, play_again, player_win
 
+game_mode = 'play'
 game_rules()
 board = init_board() # initialize the board 
 first = first_player() # initialize first player; will be 'b' or 'w'
 
 current_board = board # current board 
 current_player = first # current player 
+current_board[0,2] = 2
+#current_board[2,2] = -2
 
 while True:
 
@@ -39,18 +42,14 @@ while True:
 
 	# player win condition 
 
-	if current_board[0,2] == 2:
-		print(current_board)
-		print("White has won the game!")
-		break
-	if current_board[2,2] == -2:
-		print(current_board)
-		print("Black has won the game!")
+	win_condition = player_win(current_board)
+	if win_condition == True:
 		break
 
 	current_player = change_player(current_player) # end turn and change players 
 
 print("Thank you for playing!")
+play_again(game_mode)
 
 
 

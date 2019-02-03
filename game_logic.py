@@ -106,6 +106,8 @@ def play_again(game_mode):
 	if replay == 'y':
 		if game_mode == 'player_vs_random':
 			exec(open('player_vs_random.py').read())
+		if game_mode == 'play':
+			exec(open('play.py').read())
 	return 
 
 
@@ -124,12 +126,12 @@ def show_possible_moves(moves):
 	input("Press Enter to show possible moves!")
 	print("--------------------------------")
 	for i in range(len(moves)):
-		time.sleep(0.6)
 		print()
 		df = pd.DataFrame(moves[i], index = ["", "", ""])
 		print("Possible move", i+1)
 		print(df.to_string(header=False))
 		print()
+		time.sleep(0.5)
 	return
 
 
@@ -352,6 +354,15 @@ def change_player(player):
 	if player == 'b':
 		new_player = 'w'
 		return new_player
+
+def player_win(board):
+	if board[0,2] == 2:
+		print("White has won the game!")
+		current_board_info(board)
+	if board[2,2] == -2:
+		print("Black has won the game!")
+		current_board_info(board)
+	return True
 
 
 
