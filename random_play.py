@@ -14,6 +14,11 @@ num_zeros = 0
 num_ones = 0
 num_twos = 0
 num_total_games = 0 
+num_one_moves = 0 
+num_two_moves = 0 
+num_three_moves = 0
+num_choose_one = 0
+num_choose_two = 0 
 
 print("You simulating two computers play against each other")
 while True:
@@ -62,7 +67,16 @@ for i in range(num_games):
 			current_player = change_player(current_player)
 			continue
 
-		move_num = random.choice(range(len(moves))) # choose the move number 
+		if len(moves) == 1:
+			num_one_moves += 1
+		if len(moves) == 2:
+			num_two_moves += 1
+
+		move_num = random.choice(range(len(moves))) + 1 # choose the move number. + 1 b/c human input 1 -> 0 for machine
+		if move_num == 1:
+			num_choose_one += 1
+		if move_num == 2: 
+			num_choose_two += 1
 		move_choice = choose_move(move_num, moves) # choose the desired move 
 		current_board = move_choice # change the current board to the new board according to move choice
 
@@ -84,6 +98,10 @@ for i in range(num_games):
 time_end = time.time()
 time_taken = time_end - time_start
 
+print("Number of turns with one possible move:", num_one_moves)
+print("Number of turns with two possible moves:", num_two_moves)
+print("Number of turns chosen move one:", num_choose_one)
+print("Number of turns chosen move two:", num_choose_two)
 print("Total time taken: {:.2f} seconds" .format(time_taken))
 print("Games per minute: {:.0f}" .format(num_total_games / time_taken * 60))
 print("Number of times 0 was rolled:", num_zeros)

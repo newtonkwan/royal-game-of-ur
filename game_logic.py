@@ -2,6 +2,7 @@
 
 import numpy as np
 import pandas as pd
+import time
 
 
 def init_board():
@@ -79,6 +80,35 @@ def first_player():
 	print("--------------------------------")
 	return first_player
 
+def player_choose_color():
+	print("--------------------------------")
+	while True:
+		try: 
+			player_color = input("What color would you like to be? (Enter b / w): ")
+			if player_color == 'b' or player_color == 'w': 
+				break
+			if player_color != 'b' or player_color != 'w':
+				print("Oops! Invalid command. Try again")
+		except ValueError:
+			print("Oops! Invalid command. Try again")
+	return player_color
+
+def play_again(game_mode):
+	while True:
+		try: 
+			replay = input("Would you like to play again? (Enter y / n):")
+			if replay == 'y' or replay == 'n':
+				break
+			if replay != 'y' or replay != 'n':
+				print("Oops! Invalid command. Try again")
+		except ValueError:
+			print("Oops! Invalid command. Try again")
+	if replay == 'y':
+		if game_mode == 'player_vs_random':
+			exec(open('player_vs_random.py').read())
+	return 
+
+
 def current_player_info(player):
 	if player == "w":
 		print("It is White's turn!")
@@ -94,6 +124,7 @@ def show_possible_moves(moves):
 	input("Press Enter to show possible moves!")
 	print("--------------------------------")
 	for i in range(len(moves)):
+		time.sleep(0.6)
 		print()
 		df = pd.DataFrame(moves[i], index = ["", "", ""])
 		print("Possible move", i+1)
@@ -321,7 +352,6 @@ def change_player(player):
 	if player == 'b':
 		new_player = 'w'
 		return new_player
-	return
 
 
 
