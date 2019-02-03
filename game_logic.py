@@ -5,7 +5,7 @@ import pandas as pd
 
 
 def init_board():
-	board = np.zeros((3,4))
+	board = np.zeros((3,4), dtype = np.int8)
 	board[0,1] = 2
 	board[2,1] = -2 
 	return board
@@ -46,9 +46,9 @@ def game_rules():
 
 def current_board_info(board):
 	# print current board nicely 
-	df_board = pd.DataFrame(board) 
+	df_board = pd.DataFrame(board, index = ["", "", ""] ) 
 	print()
-	print(df_board.to_string(index=False, header=False)) # prints w/o col or index
+	print(df_board.to_string(header=False)) # prints w/o col or index
 	print()
 	return 
 
@@ -95,9 +95,9 @@ def show_possible_moves(moves):
 	print("--------------------------------")
 	for i in range(len(moves)):
 		print()
-		df = pd.DataFrame(moves[i])
+		df = pd.DataFrame(moves[i], index = ["", "", ""])
 		print("Possible move", i+1)
-		print(df.to_string(index=False, header=False))
+		print(df.to_string(header=False))
 		print()
 	return
 
