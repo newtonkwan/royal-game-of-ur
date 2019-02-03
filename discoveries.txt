@@ -5,4 +5,4 @@ In 3 x 4 No Flower Ur
 
 -After 100,000 games with black and white randomly going first where both agents play randomly, black goes first 49,960 times and wins 49,981 times. White gos first 50,040 times and wins 50,019 times. Black's win percentage = 49.98% and white's win percentage is 50.02%. There is no discernable difference in the two win percentages. 
 
--The average game length is roughly 35 moves. 
+-The average game length is roughly 35 moves. Games per minute: 80171 or about 4 million games an hour. 
