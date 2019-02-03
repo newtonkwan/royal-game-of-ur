@@ -1,4 +1,4 @@
-### $$\text{A project aimed to master the Royal Game of Ur tabula rasa}$$
+### A project aimed to master the Royal Game of Ur tabula rasa
 
 #### Ways to play 
 - Player vs. Player: Run "python play.py"
