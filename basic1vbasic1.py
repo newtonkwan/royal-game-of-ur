@@ -1,6 +1,8 @@
-# execute this file to see two agents play randomly against each other
+# an arena to match up BasicOne vs BasicOne in 3x4, no flower, 0-2 die Ur. 
+# BasicOne vs. BasicOne
 
-from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move, change_player
+from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move, change_player, player_choose_color, play_again, player_win
+import basic_one
 import random 
 import time
 
@@ -18,9 +20,16 @@ num_one_moves = 0
 num_two_moves = 0 
 num_three_moves = 0
 num_choose_one = 0
-num_choose_two = 0
+num_choose_two = 0 
+desired_moves = 0
+white_desired_moves = 0
+black_desired_moves = 0 
+white_chose_desired_move = 0
+black_chose_desired_move = 0 
+chose_desired_move = 0
 
 print("You simulating two computers play against each other")
+print("This pits 34BasicOne vs 34BasicOne")
 while True:
 	try: 
 		num_games = int(input("How many games do you want to simulate? (Enter a number):"))
@@ -28,18 +37,13 @@ while True:
 	except ValueError:
 		print("Oops. Invalid input. Try again")
 print("Simulating", num_games, "games...")
-half_games = num_games / 2
 print()
 
 time_start = time.time()
 for i in range(num_games):
 	board = init_board() # initialize the board 
-	if num_white_starts != half_games:
-		first = 'w'
-	else:
-		first = 'b'
 	#first = random.choice(['b', 'w']) # initialize first player; will be 'b' or 'w'
-	#first = 'b'
+	first = 'b'
 	if first == 'b':
 		num_black_starts += 1
 	if first == 'w':
@@ -77,7 +81,57 @@ for i in range(num_games):
 		if len(moves) == 2:
 			num_two_moves += 1
 
-		move_num = random.choice(range(len(moves))) + 1 # choose the move number. + 1 b/c human input 1 -> 0 for machine
+		#move_num = random.choice(range(len(moves))) + 1 # choose the move number. + 1 b/c human input 1 -> 0 for machine
+		move_num = basic_one.choose_move_num(current_board, current_player, moves, current_roll)
+
+		'''
+		# UNCOMMENT TO TEST
+		# test new move_num
+		# check scenarios where there are two moves and one of the moves is the desired move
+		# and compare it to how many times the agent chooses that move 
+
+
+		W3 = current_board[0,2]
+		W2 = current_board[0,3]
+		N4 = current_board[1,3]
+		B3 = current_board[2,2]
+		B2 = current_board[2,3]
+
+
+		if len(moves) > 1: 
+			for i in range(len(moves)):
+				if current_player == "w":
+					if current_roll == 1:
+						if moves[i][0,2] == W3 + 1 and moves[i][0,3] == W2 - 1: 
+							desired_moves += 1
+							white_desired_moves += 1 
+							if move_num == i + 1:
+								chose_desired_move += 1
+								white_chose_desired_move += 1
+					if current_roll == 2:
+						if moves[i][0,2] == W3 + 1 and moves[i][1,3] == N4 - 1:
+							desired_moves += 1
+							white_desired_moves += 1 
+							if move_num == i + 1:
+								chose_desired_move += 1
+								white_chose_desired_move += 1
+				if current_player == "b":
+					if current_roll == 1:
+						if moves[i][2,2] == B3 - 1 and moves[i][2,3] == B2 + 1:
+							desired_moves += 1
+							black_desired_moves += 1
+							if move_num == i + 1:
+								chose_desired_move += 1
+								black_chose_desired_move += 1
+					if current_roll == 2:
+						if moves[i][2,2] == B3 - 1 and moves[i][1,3] == N4 + 1:
+							desired_moves += 1
+							black_desired_moves += 1
+							if move_num == i + 1:
+								chose_desired_move += 1
+								black_chose_desired_move += 1
+							
+		'''
 		if move_num == 1:
 			num_choose_one += 1
 		if move_num == 2: 
@@ -103,6 +157,12 @@ for i in range(num_games):
 time_end = time.time()
 time_taken = time_end - time_start
 
+print("Number of moves that the desired move was possible:", desired_moves)
+print("Number of times that white had the desired move:", white_desired_moves)
+print("Number of times that black had the desired move:", black_desired_moves)
+print("Number of times that white chose the desired move:", white_chose_desired_move)
+print("Number of times that black chose the desired move:", black_chose_desired_move)
+print("Number of times that the desired move was chosen:", chose_desired_move)
 print("Number of turns with one possible move:", num_one_moves)
 print("Number of turns with two possible moves:", num_two_moves)
 print("Number of turns chosen move one:", num_choose_one)

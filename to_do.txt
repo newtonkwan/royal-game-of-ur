@@ -3,9 +3,12 @@ Things to complete for the royal game of ur project
 - create the 3x4 version of the game that can be played by people in the terminal. 2/2/19 
 - create an agent that plays 3x4 randomly against each other. 2/2/19 
 - pit randomly playing agents against each other and see how they do 2/2/19
+- pit the human and random agent against each other 2/2/19
 
-- pit the human and random agent against each other 
-- create a the 3x8 version of the game (with flowers) that can be played by two people in the terminal
+- create an agent that has basic strategy, like prioritizing getting to the end vs. prioritizing sending pieces back
+- pit various agents to play against each other
+- reformat the the game_logic to make it easier to use 
+- create the full 3x8 with flowers and 0-4 roll version of the game that can be played by two people in the terminal
 - create an agent that plays 3x8 randomly.
 - create a version of the game that allows you to play against the random agent 
 - create an agent that plays the game with a few heuristics
