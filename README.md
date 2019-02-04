@@ -4,8 +4,8 @@
 - Player vs. Player: Run "python play.py"
 - Player vs. Computer (random play): Run "python player_vs_random.py"
 - Computer (randomly play) vs. Computer (randomly play): Run "python random_play.py"
-- Computer (BasicOne) vs. Computer (randomly play): Run "basic1vrandom.py"
-- Computer (BasicOne) vs. Computer (BasicOne): Run "basic1vbasic1.py"
+- Computer (BasicOne) vs. Computer (randomly play): Run "python basic1vrandom.py"
+- Computer (BasicOne) vs. Computer (BasicOne): Run "python basic1vbasic1.py"
 
 
 ##### 2.4.19 
