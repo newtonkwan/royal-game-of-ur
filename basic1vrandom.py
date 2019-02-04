@@ -1,5 +1,7 @@
-# an arena to match up BasicOne vs Random in 3x4, no flower, 0-2 die Ur. 
 # BasicOne vs. Random
+# an arena to match up BasicOne vs BasicOne in 3x4, no flower, 0-2 die Ur. 
+# BasicOne Strategy: If possible, move to the end tile. If not, randomly play. 
+# Random Strategy: Play randomly from the set of possible moves 
 
 from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move, change_player, player_choose_color, play_again, player_win
 import basic_one

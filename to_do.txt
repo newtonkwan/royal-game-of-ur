@@ -4,9 +4,12 @@ Things to complete for the royal game of ur project
 - create an agent that plays 3x4 randomly against each other. 2/2/19 
 - pit randomly playing agents against each other and see how they do 2/2/19
 - pit the human and random agent against each other 2/2/19
+- create an agent BasicOne: prioritizing getting to the end 2/4/19 
+- pit Random agent vs BasicOne 2/4/19
 
-- create an agent that has basic strategy, like prioritizing getting to the end vs. prioritizing sending pieces back
-- pit various agents to play against each other
+- create an agent that has basic strategy two: prioritizing sending pieces back 
+- pit BasicTwo vs. Random agent 
+- pit BasicOne vs. BasicTwo 
 - reformat the the game_logic to make it easier to use 
 - create the full 3x8 with flowers and 0-4 roll version of the game that can be played by two people in the terminal
 - create an agent that plays 3x8 randomly.

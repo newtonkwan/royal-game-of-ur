@@ -1,5 +1,6 @@
-# an arena to match up BasicOne vs BasicOne in 3x4, no flower, 0-2 die Ur. 
 # BasicOne vs. BasicOne
+# an arena to match up BasicOne vs BasicOne in 3x4, no flower, 0-2 die Ur. 
+# BasicOne Strategy: If possible, move to the end tile. If not, randomly play. 
 
 from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move, change_player, player_choose_color, play_again, player_win
 import basic_one
@@ -172,7 +173,7 @@ print("Games per minute: {:.0f}" .format(num_total_games / time_taken * 60))
 print("Number of times 0 was rolled:", num_zeros)
 print("Number of times 1 was rolled:", num_ones)
 print("Number of times 2 was rolled:", num_twos)
-print("Average number of moves per game:", int(sum([num_zeros, num_ones, num_twos]) / num_total_games))
+print("Average number of turns per game:", int(sum([num_zeros, num_ones, num_twos]) / num_total_games))
 print("Number of times black starts:", num_black_starts)
 print("Number of times white starts:", num_white_starts)
 print("Number of black wins:", num_black_wins)
