@@ -359,10 +359,12 @@ def player_win(board):
 	if board[0,2] == 2:
 		print("White has won the game!")
 		current_board_info(board)
+		return True
 	if board[2,2] == -2:
 		print("Black has won the game!")
 		current_board_info(board)
-	return True
+		return True
+	return False
 
 
 

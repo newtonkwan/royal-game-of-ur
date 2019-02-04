@@ -61,7 +61,7 @@ while True:
 		time.sleep(0.75)
 		move_num = choose_move_num(moves) # choose the move number 
 	if current_player == computer:
-		time.sleep(1)
+		time.sleep(0.5)
 		move_num = random.choice(range(len(moves))) + 1 # choose the move number. + 1 b/c human input 1 -> 0 for machine
 	move_choice = choose_move(move_num, moves) # choose the desired move 
 	current_board = move_choice # change the current board to the new board according to move choice
