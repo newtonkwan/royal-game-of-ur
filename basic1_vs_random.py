@@ -32,7 +32,7 @@ chose_desired_move = 0
 num_black_turns = 0 
 num_white_turns = 0 
 
-print("You are simulating two computer agents against one another")
+print("You are simulating two computer agents against one another:")
 print("BasicOne vs Random")
 basicOne = 'b'
 randomUr = 'w'
@@ -55,18 +55,20 @@ for i in range(num_games):
 	board = init_board() # initialize the board 
 
 	# Determine who goes first 
-	# Black goes first 
-	first = 'b'
 
-	# Both go first an equal number of times 
-	'''
+	# Uncomment to make Black go first
+	#first = 'b'
+
+	# Uncomment to make White go first
+	#first = 'w'
+
+	# Uncomment to have each go first an equal number of times 
 	if num_white_starts != half_games:
 		first = 'w'
 	else:
 		first = 'b'
-	'''
 
-	# First player is randomly chosen 
+	# Uncomment to have the first player chosen randomly
 	#first = random.choice(['b', 'w']) # initialize first player; will be 'b' or 'w'
 	
 	# Counts how many times each player goes first 

@@ -20,7 +20,7 @@ num_three_moves = 0
 num_choose_one = 0
 num_choose_two = 0
 
-print("You simulating two computers play against each other")
+print("You simulating two computers play against each other:")
 print("Random vs Random")
 while True:
 	try: 
