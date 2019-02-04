@@ -11,7 +11,7 @@
 
 ##### 2.4.19 
 - created BasicOne: an agent that will move a tile to the end tile if possible, playing randomly otherwise. 
-- matched up BasicOne vs Random (basic1vrandom.py)
+- matched up BasicOne vs Random (basic1_vs_random.py)
 - discovered BasicOne strategy is better than random (2.5% increase win rate)
 - discovered going first is always beneficial (1.5% increase win rate)
 
