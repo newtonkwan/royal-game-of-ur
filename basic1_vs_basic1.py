@@ -1,7 +1,6 @@
-# BasicOne vs. Random
+# BasicOne vs. BasicOne
 # an arena to match up BasicOne vs BasicOne in 3x4, no flower, 0-2 die Ur. 
 # BasicOne Strategy: If possible, move to the end tile. If not, randomly play. 
-# Random Strategy: Play randomly from the set of possible moves 
 
 from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move, change_player, player_choose_color, play_again, player_win
 import basic_one
@@ -29,15 +28,9 @@ black_desired_moves = 0
 white_chose_desired_move = 0
 black_chose_desired_move = 0 
 chose_desired_move = 0
-num_black_turns = 0 
-num_white_turns = 0 
 
-print("You are simulating two computer agents against one another")
-print("BasicOne vs Random")
-basicOne = 'b'
-randomUr = 'w'
-print("BasicOne:", basicOne)
-print("Random:", randomUr)
+print("You simulating two computers play against each other")
+print("BasicOne vs BasicOne")
 while True:
 	try: 
 		num_games = int(input("How many games do you want to simulate? (Enter a number):"))
@@ -45,31 +38,26 @@ while True:
 	except ValueError:
 		print("Oops. Invalid input. Try again")
 print("Simulating", num_games, "games...")
-half_games = num_games/2
+half_games = num_games / 2
 print()
 
 time_start = time.time()
-
-# loops through num_games simulations 
 for i in range(num_games):
 	board = init_board() # initialize the board 
-
 	# Determine who goes first 
 	# Black goes first 
-	first = 'b'
+	#first = 'b'
 
 	# Both go first an equal number of times 
-	'''
+	
 	if num_white_starts != half_games:
 		first = 'w'
 	else:
 		first = 'b'
-	'''
+	
 
 	# First player is randomly chosen 
 	#first = random.choice(['b', 'w']) # initialize first player; will be 'b' or 'w'
-	
-	# Counts how many times each player goes first 
 	if first == 'b':
 		num_black_starts += 1
 	if first == 'w':
@@ -87,15 +75,14 @@ for i in range(num_games):
 		if current_roll == 1:
 			num_ones += 1
 		if current_roll == 2:
-			num_twos += 1			
+			num_twos += 1
 		
 
 		# roll a 0 
 		if current_roll == 0: 
 			current_player = change_player(current_player)
 			continue
-
-
+	
 		moves = possible_moves(current_player, current_board, current_roll) # gets possible moves 
 
 		# no possible moves 
@@ -108,14 +95,10 @@ for i in range(num_games):
 		if len(moves) == 2:
 			num_two_moves += 1
 
-		# Pick a move
-		if current_player == basicOne:
-			move_num = basic_one.choose_move_num(current_board, current_player, moves, current_roll)
-		if current_player == randomUr:
-			move_num = random.choice(range(len(moves))) + 1
+		#move_num = random.choice(range(len(moves))) + 1 # choose the move number. + 1 b/c human input 1 -> 0 for machine
+		move_num = basic_one.choose_move_num(current_board, current_player, moves, current_roll)
 
-		
-
+		'''
 		# UNCOMMENT TO TEST
 		# test new move_num
 		# check scenarios where there are two moves and one of the moves is the desired move
@@ -128,11 +111,6 @@ for i in range(num_games):
 		B3 = current_board[2,2]
 		B2 = current_board[2,3]
 
-
-		if current_player == 'w':
-			num_white_turns += 1
-		if current_player == "b":
-			num_black_turns += 1
 
 		if len(moves) > 1: 
 			for i in range(len(moves)):
@@ -167,7 +145,7 @@ for i in range(num_games):
 								chose_desired_move += 1
 								black_chose_desired_move += 1
 							
-					
+		'''
 		if move_num == 1:
 			num_choose_one += 1
 		if move_num == 2: 
@@ -193,24 +171,22 @@ for i in range(num_games):
 time_end = time.time()
 time_taken = time_end - time_start
 
-print("Number of white turns:", num_white_turns)
-print("Number of black turns:", num_black_turns)
-print("Number of moves that the desired move was possible:", desired_moves)
-print("Number of times that white had the desired move:", white_desired_moves)
-print("Number of times that white chose the desired move:", white_chose_desired_move)
-print("Number of times that black had the desired move:", black_desired_moves)
-print("Number of times that black chose the desired move:", black_chose_desired_move)
-print("Number of times that the desired move was chosen:", chose_desired_move)
-print("Number of turns with one possible move:", num_one_moves)
-print("Number of turns with two possible moves:", num_two_moves)
-print("Number of turns chosen move one:", num_choose_one)
-print("Number of turns chosen move two:", num_choose_two)
+#print("Number of moves that the desired move was possible:", desired_moves)
+#print("Number of times that white had the desired move:", white_desired_moves)
+#print("Number of times that black had the desired move:", black_desired_moves)
+#print("Number of times that white chose the desired move:", white_chose_desired_move)
+#print("Number of times that black chose the desired move:", black_chose_desired_move)
+#print("Number of times that the desired move was chosen:", chose_desired_move)
+#print("Number of turns with one possible move:", num_one_moves)
+#print("Number of turns with two possible moves:", num_two_moves)
+#print("Number of turns chosen move one:", num_choose_one)
+#print("Number of turns chosen move two:", num_choose_two)
 print("Total time taken: {:.2f} seconds" .format(time_taken))
 print("Games per minute: {:.0f}" .format(num_total_games / time_taken * 60))
-print("Number of times 0 was rolled:", num_zeros)
-print("Number of times 1 was rolled:", num_ones)
-print("Number of times 2 was rolled:", num_twos)
-print("Average number of moves per game:", int(sum([num_zeros, num_ones, num_twos]) / num_total_games))
+#print("Number of times 0 was rolled:", num_zeros)
+#print("Number of times 1 was rolled:", num_ones)
+#print("Number of times 2 was rolled:", num_twos)
+print("Average number of turns per game:", int(sum([num_zeros, num_ones, num_twos]) / num_total_games))
 print("Number of times black starts:", num_black_starts)
 print("Number of times white starts:", num_white_starts)
 print("Number of black wins:", num_black_wins)

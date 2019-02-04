@@ -21,6 +21,7 @@ num_choose_one = 0
 num_choose_two = 0
 
 print("You simulating two computers play against each other")
+print("Random vs Random")
 while True:
 	try: 
 		num_games = int(input("How many games do you want to simulate? (Enter a number):"))
@@ -103,15 +104,15 @@ for i in range(num_games):
 time_end = time.time()
 time_taken = time_end - time_start
 
-print("Number of turns with one possible move:", num_one_moves)
-print("Number of turns with two possible moves:", num_two_moves)
-print("Number of turns chosen move one:", num_choose_one)
-print("Number of turns chosen move two:", num_choose_two)
+#print("Number of turns with one possible move:", num_one_moves)
+#print("Number of turns with two possible moves:", num_two_moves)
+#print("Number of turns chosen move one:", num_choose_one)
+#print("Number of turns chosen move two:", num_choose_two)
 print("Total time taken: {:.2f} seconds" .format(time_taken))
 print("Games per minute: {:.0f}" .format(num_total_games / time_taken * 60))
-print("Number of times 0 was rolled:", num_zeros)
-print("Number of times 1 was rolled:", num_ones)
-print("Number of times 2 was rolled:", num_twos)
+#print("Number of times 0 was rolled:", num_zeros)
+#print("Number of times 1 was rolled:", num_ones)
+#print("Number of times 2 was rolled:", num_twos)
 print("Average number of moves per game:", int(sum([num_zeros, num_ones, num_twos]) / num_total_games))
 print("Number of times black starts:", num_black_starts)
 print("Number of times white starts:", num_white_starts)

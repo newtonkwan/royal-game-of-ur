@@ -131,7 +131,6 @@ def show_possible_moves(moves):
 		print("Possible move", i+1)
 		print(df.to_string(header=False))
 		print()
-		time.sleep(0.5)
 	return
 
 

@@ -1,12 +1,13 @@
 ### A project aimed to master the Royal Game of Ur tabula rasa
 
 #### Ways to play 
-- Player vs. Player: Run "python play.py"
+- Player vs. Player: Run "python player_vs_player.py"
 - Player vs. Computer (random play): Run "python player_vs_random.py"
-- Computer (randomly play) vs. Computer (randomly play): Run "python random_play.py"
-- Computer (BasicOne) vs. Computer (randomly play): Run "python basic1vrandom.py"
-- Computer (BasicOne) vs. Computer (BasicOne): Run "python basic1vbasic1.py"
 
+#### Ways to simulate
+- Computer (BasicOne) vs. Computer (randomly play): Run "python basic1_vs_random.py"
+- Computer (randomly play) vs. Computer (randomly play): Run "python random_vs_random.py"
+- Computer (BasicOne) vs. Computer (BasicOne): Run "python basic1_vs_basic1.py"
 
 ##### 2.4.19 
 - created BasicOne: an agent that will move a tile to the end tile if possible, playing randomly otherwise. 
