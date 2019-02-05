@@ -1,3 +1,5 @@
+# The Royal Game of Ur
+
 ### A project aimed to master the Royal Game of Ur tabula rasa
 
 #### Ways to play 
@@ -5,8 +7,8 @@
 - Player vs. Computer (random play): Run "python player_vs_random.py"
 
 #### Ways to simulate
-- Computer (BasicOne) vs. Computer (randomly play): Run "python basic1_vs_random.py"
-- Computer (randomly play) vs. Computer (randomly play): Run "python random_vs_random.py"
+- Computer (BasicOne) vs. Computer (random play): Run "python basic1_vs_random.py"
+- Computer (random play) vs. Computer (random play): Run "python random_vs_random.py"
 - Computer (BasicOne) vs. Computer (BasicOne): Run "python basic1_vs_basic1.py"
 
 ##### 2.4.19 
