@@ -1,8 +1,63 @@
-Discoveries
+Discoveries 
 
-In 3 x 4 No Flower Ur 
+
+3 x 4, No Flower, 0-2 Ur 
+
+
+Agents
+Random -- Chooses a move randomly with uniform distribution across all possible moves. 
+
+BasicOne -- If it is possible to move into the end tile, BasicOne will always do so. If not, it chooses a move randomly with uniform distribution across all possible moves. 
+
+BasicTwo -- If possible, send an opponent's piece home. If there is more than one option to do so, choose the move randomly. 
+
+
+
+
+
+
+Matchups  
+
+BasicOne vs Random 
+
+- After 100,000 games with each player going first 50,000 times, black wins 52,685 times and white wins 47,315 times. The black win percentage is 52.69% and the white win percentage is 48.45%. BasicOne strategy is superior with about a 2.7% increase in win percentage over random, all else equal. 
+
+-The average game length is 34 turns. 
+
+-Games/min: 59,664
+-Games/hr: 3.6 million
+
+
+
+BasicTwo vs Random 
+
+- After 100,000 games with each player going first 50,000 times, black wins 54,369 times and white wins 45,631 times. The black win percentage is 54.37% and the white win percentage is 45.63%. BasicOne strategy is superior with about a 4.4% increase in win percentage over random, all else equal. 
+
+- The average game length is 38 turns 
+
+- Games/min: 46,967
+- Games/hr: 2,818,022 
+
+
+
+BasicTwo vs BasicOne 
+
+- After 100,000 games with each player going first 50,000 times, black wins 51,974 times and white wins 48,026 times. Black win percentage is 51.97% and white win percentage is 48.03%. BasicTwo strategy (sending home) gives a slight edge over the BasicOne strategy (prioritize end tile), about a 2% increase in win percentage. 
+
+- The average game length is 37 turns
+
+- Games/min: 48,395 
+- Games/hr: 2,903,720
+
+
+
+
+
+
+Testing matchups 
 
 Random vs Random 
+
 -After 100,000 games with black going first 100,000 times, black wins 51,670 times and white wins 48,330 times. Black win percentage is 51.67% and white win percentage is 48.33%. Going first gives a slight edge, about a 1.5% increase in win percentage, all else equal.
 
 -After 100,000 games with each player going first 50,000 times, black wins 50,103 times and white wins 49,897 times. Black's win percentage = 50.10% and white's win percentage is 49.90%. All being equal, there is no discernable difference in the two win percentages, as expected. 
@@ -12,6 +67,8 @@ Random vs Random
 -The average game length is roughly 35 moves. 
 
 -Games per minute: 80171 or about 4 million games an hour. 
+
+
 
 
 BasicOne vs BasicOne
@@ -24,19 +81,20 @@ BasicOne vs BasicOne
 -Games/min: 66,246 or about 3.6 million games/hr 
 
 
-BasicOne vs Random 
-- After 100,000 games with each player going first 50,000 times, black wins 52,685 times and white wins 47,315 times. The black win percentage is 52.69% and the white win percentage is 48.45%. Going first gives a slight edge, about a 2.7% increase in win percentage over random, all else equal. 
-
--The average game length is 34 turns. 
-
--Games/min: 59,664 or about 3.6 million games/hr 
 
 
+BasicTwo vs BasicTwo 
+-BasicTwo Strategy: If given the option, always send an opponent's piece home. If there are multiple moves that send an opponent's piece home, randomly choose between them. 
+
+- After 100,000 games with black going first, black wins 51,233 times and white wins 48,777 times. Black win percentage is 51.22% and white win percentage is 48.78%. Going first gives a slight edge, about 1.5% increase in win percentage, all else equal, as expected. 
+
+-The average game length is 41 turns 
+
+Games/min: 36,695 
 
 
 
 
-Agents
-Random -- Chooses a move randomly with uniform distribution across all possible moves. 
 
-BasicOne -- If it is possible to move into the end tile, BasicOne will always do so. If not, it chooses a move randomly with uniform distribution across all possible moves. 
+
+

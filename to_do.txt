@@ -6,19 +6,23 @@ Things to complete for the royal game of ur project
 - pit the human and random agent against each other 2/2/19
 - create an agent BasicOne: prioritizing getting to the end 2/4/19 
 - pit Random agent vs BasicOne 2/4/19
+- create an agent BasicTwo: prioritizing sending pieces back 2/5/19
+- pit BasicTwo vs Random 2/5/19
+- pit BasicTwo vs BasicOne 2/5/19
 
-- create an agent that has basic strategy two: prioritizing sending pieces back 
-- pit BasicTwo vs. Random agent 
-- pit BasicOne vs. BasicTwo 
-- reformat the the game_logic to make it easier to use 
-- create the full 3x8 with flowers and 0-4 roll version of the game that can be played by two people in the terminal
-- create an agent that plays 3x8 randomly.
-- create a version of the game that allows you to play against the random agent 
-- create an agent that plays the game with a few heuristics
-- create a version of the game that allows you to play against the agent that plays with a few heuristics 
+
+- create an agent BasicThree: prioritize getting home, then sending pieces back, then randomly. 
+- create an agent BasicFour: prioritize sending pieces back, prioritize getting home, then randomly. 
 - create an agent that plays using optimal play (meaning pick the move with the highest probability of winning)
-- create an agent that learns to play optimally using reinforcement learning 
+- create an agent that learns to play optimally using deep reinforcement learning 
+- combine simulation matchups into one file to make it easier to use 
+- create the full 3x8, flowers, 0-4 roll version of the game that can be played by two people in the terminal
+- create an agent that plays 3x8 randomly.
+- implement player vs random 
+- implement agent with heurestics set in the paper, RoyalUr
+- implement player vs RoyalUr
+- create an agent that plays using optimal play (meaning pick the move with the highest probability of winning)
+- create an agent that learns to play optimally using deep reinforcement learning 
 
-Here we gooooo
 
 
