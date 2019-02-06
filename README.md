@@ -14,6 +14,9 @@
 - Computer (BasicOne) vs. Computer (BasicOne): Run "python basic1_vs_basic1.py"
 - Computer (Random) vs. Computer (Random): Run "python random_vs_random.py"
 
+##### 2.6.19 
+- add 'player_vs_computer.py', allowing player to choose which agent to play
+
 ##### 2.5.19
 - created BasicTwo: an agent that will send home an opponent's piece if possible, playing randomly otherwise 
 - matched up BasicTwo vs Random (basic2_vs_random.py)
