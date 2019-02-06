@@ -10,7 +10,8 @@ Things to complete for the royal game of ur project
 - pit BasicTwo vs Random 2/5/19
 - pit BasicTwo vs BasicOne 2/5/19
 
-
+- implement player vs. BasicOne 
+- implement player vs. BasicTwo
 - create an agent BasicThree: prioritize getting home, then sending pieces back, then randomly. 
 - create an agent BasicFour: prioritize sending pieces back, prioritize getting home, then randomly. 
 - create an agent that plays using optimal play (meaning pick the move with the highest probability of winning)

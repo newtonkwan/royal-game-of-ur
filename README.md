@@ -4,12 +4,22 @@
 
 #### Ways to play 
 - Player vs. Player: Run "python player_vs_player.py"
-- Player vs. Computer (random play): Run "python player_vs_random.py"
+- Player vs. Computer (Random): Run "python player_vs_random.py"
 
 #### Ways to simulate
-- Computer (BasicOne) vs. Computer (random play): Run "python basic1_vs_random.py"
-- Computer (random play) vs. Computer (random play): Run "python random_vs_random.py"
+- Computer (BasicTwo) vs. Computer (BasicOne): Run "python basic2_vs_basic1.py"
+- Computer (BasicTwo) vs. Computer (Random): Run "python basic2_vs_random.py"
+- Computer (BasicOne) vs. Computer (Random): Run "python basic1_vs_random.py"
+- Computer (BasicTwo) vs. Computer (BasicTwo): Run "python basic1_vs_basic1.py"
 - Computer (BasicOne) vs. Computer (BasicOne): Run "python basic1_vs_basic1.py"
+- Computer (Random) vs. Computer (Random): Run "python random_vs_random.py"
+
+##### 2.5.19
+- created BasicTwo: an agent that will send home an opponent's piece if possible, playing randomly otherwise 
+- matched up BasicTwo vs Random (basic2_vs_random.py)
+- matched up BasicTwo vs BasicOne (basic2_vs_basic1.py)
+- discovered BasicTwo strategy is better than Random (4.4% increased win rate)
+- discovered BasicTwo strategy is better than BasicOne (2% increase win rate)
 
 ##### 2.4.19 
 - created BasicOne: an agent that will move a tile to the end tile if possible, playing randomly otherwise. 
