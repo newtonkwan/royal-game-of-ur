@@ -1,9 +1,11 @@
-# execute this file to play the game 
+# Run this file to for player vs player in 3x4, no flower, 0-2 die Ur 
 
-from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move, change_player, play_again, player_win
+from game_logic import init_board, game_rules, roll_die, possible_moves, first_player, choose_move, current_player_info, show_possible_moves, current_board_info, current_die_info, choose_move_num, choose_move, change_player, play_again, player_win, game_mode_info
 import time
-game_mode = 'play'
-game_rules()
+
+game_mode = 'player_vs_player'
+game_rules() # shows the game rules
+game_mode_info(game_mode) # welcome 
 board = init_board() # initialize the board 
 first = first_player() # initialize first player; will be 'b' or 'w'
 
@@ -53,7 +55,6 @@ while True:
 
 	current_player = change_player(current_player) # end turn and change players 
 
-print("Thank you for playing!")
 play_again(game_mode)
 
 

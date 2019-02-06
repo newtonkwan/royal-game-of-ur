@@ -4,7 +4,7 @@
 
 #### Ways to play 
 - Player vs. Player: Run "python player_vs_player.py"
-- Player vs. Computer (Random): Run "python player_vs_random.py"
+- Player vs. Computer: Run "python player_vs_computer.py"
 
 #### Ways to simulate
 - Computer (BasicTwo) vs. Computer (BasicOne): Run "python basic2_vs_basic1.py"
