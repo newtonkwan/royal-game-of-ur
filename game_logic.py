@@ -4,6 +4,50 @@ import numpy as np
 import pandas as pd
 import time
 
+def assign_agents(agent_one, agent_two):
+	# assign agents their colors 
+	agents = []
+	if agent_one == 'Random':
+		random_agent_p1 = 'b'
+		if agent_two == 'Random':
+			random_agent_p2 = 'w'
+		if agent_two == 'BasicOne':
+			basicOne_p2 = 'w'
+		if agent_two == 'BasicTwo':
+			basicTwo_p2 = 'w'
+		if agent_two == 'BasicThree':
+			basicThree_p2 = 'w'
+	if agent_one == 'BasicOne':
+		basicOne_p1 = 'b'
+		if agent_two == 'Random':
+			random_agent_p2 = 'w'
+		if agent_two == 'BasicOne':
+			basicOne_p2 = 'w'
+		if agent_two == 'BasicTwo':
+			basicTwo_p2 = 'w'
+		if agent_two == 'BasicThree':
+			basicThree_p2 = 'w'	
+	if agent_one == 'BasicTwo':
+		basicTwo_p1 = 'b'
+		if agent_two == 'Random':
+			random_agent_p2 = 'w'
+		if agent_two == 'BasicOne':
+			basicOne_p2 = 'w'
+		if agent_two == 'BasicTwo':
+			basicTwo_p2 = 'w'
+		if agent_two == 'BasicThree':
+			basicThree_p2 = 'w'	
+	if agent_one == 'BasicThree':
+		basicThree_p1 = 'b'
+		if agent_two == 'Random':
+			random_agent_p2 = 'w'
+		if agent_two == 'BasicOne':
+			basicOne_p2 = 'w'
+		if agent_two == 'BasicTwo':
+			basicTwo_p2 = 'w'
+		if agent_two == 'BasicThree':
+			basicThree_p2 = 'w'	
+	return random_agent_p1, random_agent_p2, basicOne_p1, basicOne_p2, basicTwo_p1, basicTwo_p2, basicThree_p1, 
 
 def change_player(player):
 	# switch players when the turn is over 
@@ -15,16 +59,17 @@ def change_player(player):
 		return new_player
 
 def choose_agent():
-	# choose the agent that you want to play against 
+	# choose the agent that you want to play against in player vs computer 
+	print()
+	print("Agents available:")
+	print("")
+	print("Random")
+	print("BasicOne")
+	print("BasicTwo")
+	print("BasicThree")
+	print()
 	while True:
 		try: 
-			print()
-			print("Agents available:")
-			print("")
-			print("Random")
-			print("BasicOne")
-			print("BasicTwo")
-			print()
 			agent = input("What agent would you like to face? (Enter agent name): ")
 			if agent == 'random' or agent == 'Random': 
 				break
@@ -32,11 +77,66 @@ def choose_agent():
 				break
 			if agent == 'basictwo' or agent == "basicTwo" or agent == "BasicTwo":
 				break
-			if agent != 'random' or agent != 'Random' or agent != 'basicone' or agent != "basicOne" or agent != "BasicOne" or agent != 'basictwo' or agent != "basicTwo" or agent != "BasicTwo":
+			if agent == 'basicthree' or agent == "basicThree" or agent == "BasicThree":
+				break
+			if agent != 'random' or agent != 'Random' or agent != 'basicone' or agent != "basicOne" or agent != "BasicOne" or agent != 'basictwo' or agent != "basicTwo" or agent != "BasicTwo" or agent != 'basicthree' or agent != 'basicTwo' or agent != 'BasicThree':
 				print("Oops! Invalid command. Try again")
 		except ValueError:
 			print("Oops! Invalid command. Try again")
 	return agent
+
+def choose_two_computer_agents():
+	# choosing agents to play in computer vs. computer v2
+	print()
+	print("Agents available:")
+	print("")
+	print("Random")
+	print("BasicOne")
+	print("BasicTwo")
+	print("BasicThree")
+	print()
+	agent_1_dict = {}
+	agent_2_dict = {}
+	while True:
+		try: 
+			agent_one = input("Choose the first agent (Enter agent name): ")
+			if agent_one == 'random' or agent_one == 'Random': 
+				agent_1_dict['b'] = "Random"
+				break
+			if agent_one == 'basicone' or agent_one == "basicOne" or agent_one == "BasicOne":
+				agent_1_dict['b'] = "BasicOne"
+				break
+			if agent_one == 'basictwo' or agent_one == "basicTwo" or agent_one == "BasicTwo":
+				agent_1_dict['b'] = "BasicTwo"
+				break
+			if agent_one == 'basicthree' or agent_one == "basicThree" or agent_one == "BasicThree":
+				agent_1_dict['b'] = "BasicThree"
+				break
+			if agent_one != 'random' or agent_one != 'Random' or agent_one != 'basicone' or agent_one != "basicOne" or agent_one != "BasicOne" or agent_one != 'basictwo' or agent_one != "basicTwo" or agent_one != "BasicTwo" or agent_one != 'basicthree' or agent_one != "basicThree" or agent_one != "BasicThree":
+				print("Oops! Invalid command. Try again")
+		except ValueError:
+			print("Oops! Invalid command. Try again")
+
+	while True:
+		try: 
+			agent_two = input("Choose the second agent (Enter agent name): ")
+			if agent_two == 'random' or agent_two == 'Random': 
+				agent_2_dict['w'] = "Random"
+				break
+			if agent_two == 'basicone' or agent_two == "basicOne" or agent_two == "BasicOne":
+				agent_2_dict['w'] = "BasicOne"
+				break
+			if agent_two == 'basictwo' or agent_two == "basicTwo" or agent_two == "BasicTwo":
+				agent_2_dict['w'] = "BasicTwo"
+				break
+			if agent_two == "basicthree" or agent_two == "basicThree" or agent_two == "BasicThree":
+				agent_2_dict['w'] = "BasicThree"
+				break
+			if agent_two != 'random' or agent_two != 'Random' or agent_two != 'basicone' or agent_two != "basicOne" or agent_two != "BasicOne" or agent_two != 'basictwo' or agent_two != "basicTwo" or agent_two != "BasicTwo" or agent_two != 'basicthree' or agent_two != "basicThree" or agent_two != "BasicThree":
+				print("Oops! Invalid command. Try again")
+		except ValueError:
+			print("Oops! Invalid command. Try again")
+	return agent_1_dict, agent_2_dict
 
 
 def choose_move(move_num, moves):
@@ -117,6 +217,8 @@ def game_mode_chosen(agent):
 		game_mode = 'player_vs_basic1'
 	if agent == 'basictwo' or agent == "basicTwo" or agent == "BasicTwo":
 		game_mode = 'player_vs_basic2'
+	if agent == 'basicthree' or agent == "basicThree" or agent == "BasicThree":
+		game_mode = 'player_vs_basic3'
 	return game_mode
 
 def game_mode_info(game_mode):
@@ -215,15 +317,17 @@ def player_choose_color():
 			print("Oops! Invalid command. Try again")
 	return player_color 
 
-def player_info(player, computer):
-	# displays what color the player and computer are 
+def player_info(player_one, player_two, game_mode):
+	# displays what colors of the two players are 
 	print("-------------------------------------------------")
-	if player == 'b':
-		print("Player: Black")
-		print("Computer: White")
-	if player == 'w':
-		print("Player: White")
-		print("Computer: Black")		
+	if game_mode == 'player_vs_random' or game_mode == 'player_vs_basic1' or game_mode == 'player_vs_basic2':
+		if player_one == 'b':
+			print("Player: Black")
+			print("Computer: White")
+		if player_one == 'w':
+			print("Player: White")
+			print("Computer: Black")	
+
 	return
 
 def player_win(board):

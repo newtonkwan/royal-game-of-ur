@@ -4,8 +4,8 @@ from game_logic import init_board, game_rules, roll_die, possible_moves, first_p
 import random 
 import basic_one
 import basic_two
+import basic_three
 import time
-
 
 game_rules() # show the game rules
 agent = choose_agent() # choose the agent you want to play 
@@ -13,7 +13,7 @@ game_mode = game_mode_chosen(agent) # determines game_mode based off of chosen a
 game_mode_info(game_mode) # show the game mode info
 player = player_choose_color() # will be 'b' or 'w'
 computer = computer_choose_color(player) # will be color not chosen by player
-player_info(player, computer) # displays player color and computer color
+player_info(player, computer, game_mode) # displays player color and computer color
 
 board = init_board() # initialize the board 
 first = first_player() # initialize first player; will be 'b' or 'w'
@@ -67,6 +67,10 @@ while True:
 			move_num = basic_one.choose_move_num(current_board, current_player, moves, current_roll)
 		if game_mode == 'player_vs_basic2':
 			move_num = basic_two.choose_move_num(current_board, current_player, moves, current_roll)[0]
+		if game_mode == 'player_vs_basic3':
+			what_move  = basic_three.choose_move_num(current_board, current_player, moves, current_roll)
+			move_num = what_move[0]	
+
 	move_choice = choose_move(move_num, moves) # choose the desired move 
 	current_board = move_choice # change the current board to the new board according to move choice
 	time.sleep(2)

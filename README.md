@@ -6,23 +6,27 @@
 - Player vs. Player: Run "python player_vs_player.py"
 - Player vs. Computer: Run "python player_vs_computer.py"
 
-#### Ways to simulate
-- Computer (BasicTwo) vs. Computer (BasicOne): Run "python basic2_vs_basic1.py"
-- Computer (BasicTwo) vs. Computer (Random): Run "python basic2_vs_random.py"
-- Computer (BasicOne) vs. Computer (Random): Run "python basic1_vs_random.py"
-- Computer (BasicTwo) vs. Computer (BasicTwo): Run "python basic1_vs_basic1.py"
-- Computer (BasicOne) vs. Computer (BasicOne): Run "python basic1_vs_basic1.py"
-- Computer (Random) vs. Computer (Random): Run "python random_vs_random.py"
+#### How to simulate
+- Computer vs. Computer: Run 'python computer_vs_computer.py'
+
+##### 2.7.19
+- added 'computer_vs_computer.py', which allows simulations of any combination of agents 
+- moved old test / obselete files into old_test_files folder 
+- discovered BasicThree strategy is better than Random (7% win rate increase)
+- discovered BasicThree strategy is better than BasicOne (4% win rate increase)
+- discovered BasicThree stretegy is better than BasicTwo (2.5% win rate increase)
 
 ##### 2.6.19 
+- created BasicThree: an agent that is a combination of BasicOne and BasicTwo, prioritizing BasicOne strategy
 - add 'player_vs_computer.py', allowing player to choose which agent to play
+- add ability to play against BasicOne and BasicTwo 
 
 ##### 2.5.19
 - created BasicTwo: an agent that will send home an opponent's piece if possible, playing randomly otherwise 
 - matched up BasicTwo vs Random (basic2_vs_random.py)
 - matched up BasicTwo vs BasicOne (basic2_vs_basic1.py)
-- discovered BasicTwo strategy is better than Random (4.4% increased win rate)
-- discovered BasicTwo strategy is better than BasicOne (2% increase win rate)
+- discovered BasicTwo strategy is better than Random (4.5% increase in win rate)
+- discovered BasicTwo strategy is better than BasicOne (2% increase in win rate)
 
 ##### 2.4.19 
 - created BasicOne: an agent that will move a tile to the end tile if possible, playing randomly otherwise. 

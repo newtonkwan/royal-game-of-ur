@@ -9,7 +9,9 @@ Random -- Chooses a move randomly with uniform distribution across all possible 
 
 BasicOne -- If it is possible to move into the end tile, BasicOne will always do so. If not, it chooses a move randomly with uniform distribution across all possible moves. 
 
-BasicTwo -- If possible, send an opponent's piece home. If there is more than one option to do so, choose the move randomly. 
+BasicTwo -- If possible, send an opponent's piece home. If there is more than one option to send a piece home,  choose randomly between them. If there are no preferred moves, choose randomly. 
+
+BasicTwo -- If possible, move to the end tile. Then, if possible, send an opponent's piece home (choose randomly if there are multiple moves that send a piece home). If there are no preferred moves, choose randomly.
 
 
 
@@ -50,6 +52,47 @@ BasicTwo vs BasicOne
 - Games/hr: 2,903,720
 
 
+
+
+
+BasicThree vs Random 
+
+- black = BasicThree; white = Random
+
+- After 100,000 games with each player going first 50,000 times, black wins 56,837 times and white wins 43,163 times. Black win percentage is 56.84% and white win percentage is 43.16%. BasicThree strategy gives a fairly substantial edge over Random, about a 7% increase in win percentage. 
+
+- The average game length is 36 turns
+
+- Games/min: 44,545 
+- Games/hr: 2,672,690
+
+
+
+
+BasicThree vs BasicOne 
+
+- black = BasicThree; white = BasicOne
+
+- After 100,000 games with each player going first 50,000 times, black wins 53,972 times and white wins 46,028 times. Black win percentage is 53.97% and white win percentage is 46.03%. BasicThree strategy gives a fairly substantial edge over Random, about a 4% increase in win percentage.  
+
+- The average game length is 36 turns
+
+- Games/min: 37,037
+- Games/hr: 2,222,246
+
+
+
+
+BasicThree vs BasicTwo 
+
+- black = BasicThree; white = BasicOne
+
+- After 100,000 games with each player going first 50,000 times, black wins 52,323 times and white wins 47,677 times. Black win percentage is 52.32% and white win percentage is 47.68%. BasicThree strategy gives a fairly substantial edge over Random, about a 2.5% increase in win percentage.   
+
+- The average game length is 37 turns
+
+- Games/min: 48,395 
+- Games/hr: 2,903,720
 
 
 
