@@ -1,4 +1,4 @@
-# BasicTwo Strategy
+# BasicTwo
 # In order of options:
 # 1) Prioritize getting sending a piece home 
 # 2) Randomly play 

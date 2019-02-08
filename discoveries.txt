@@ -73,7 +73,7 @@ BasicThree vs BasicOne
 
 - black = BasicThree; white = BasicOne
 
-- After 100,000 games with each player going first 50,000 times, black wins 53,972 times and white wins 46,028 times. Black win percentage is 53.97% and white win percentage is 46.03%. BasicThree strategy gives a fairly substantial edge over Random, about a 4% increase in win percentage.  
+- After 100,000 games with each player going first 50,000 times, black wins 53,972 times and white wins 46,028 times. Black win percentage is 53.97% and white win percentage is 46.03%. BasicThree strategy gives an edge over BasicOne, about a 4% increase in win percentage.  
 
 - The average game length is 36 turns
 
@@ -87,12 +87,69 @@ BasicThree vs BasicTwo
 
 - black = BasicThree; white = BasicOne
 
-- After 100,000 games with each player going first 50,000 times, black wins 52,323 times and white wins 47,677 times. Black win percentage is 52.32% and white win percentage is 47.68%. BasicThree strategy gives a fairly substantial edge over Random, about a 2.5% increase in win percentage.   
+- After 100,000 games with each player going first 50,000 times, black wins 52,323 times and white wins 47,677 times. Black win percentage is 52.32% and white win percentage is 47.68%. BasicThree strategy gives an edge over BasicTwo, about a 2.5% increase in win percentage.   
 
 - The average game length is 37 turns
 
 - Games/min: 48,395 
 - Games/hr: 2,903,720
+
+
+
+
+BasicFour vs Random
+
+- black = BasicFour; white = Random
+
+- After 100,000 games with each player going first 50,000 times, black wins 57,248 times and white wins 42,752 times. Black win percentage is 57.25% and white win percentage is 42.75%. BasicFour strategy gives a negligible edge over Random, about a 7.25% increase in win percentage.   
+
+- The average game length is 37 turns
+
+- Games/min: 44,061
+- Games/hr: 2,643,662
+
+
+
+BasicFour vs BasicOne
+
+- black = BasicFour; white = BasicOne
+
+- After 100,000 games with each player going first 50,000 times, black wins 54,668 times and white wins 45,332 times. Black win percentage is 54.67% and white win percentage is 45.33%. BasicFour strategy gives a sligtht edge over BasicOne, about a 4.5% increase in win percentage.   
+
+- The average game length is 39 turns
+
+- Games/min: 37,011
+- Games/hr: 2,220,632
+
+
+
+BasicFour vs BasicTwo
+
+- black = BasicFour; white = BasicTwo
+
+- After 100,000 games with each player going first 50,000 times, black wins 53,167 times and white wins 46,833 times. Black win percentage is 53.17% and white win percentage is 46.83%. BasicFour strategy gives a slight edge over BasicTwo, about a 3% increase in win percentage.   
+
+- The average game length is 40 turns
+
+- Games/min: 31,801
+- Games/hr: 1,908,069
+
+
+
+BasicFour vs BasicThree 
+
+- black = BasicFour; white = BasicOne
+
+- After 100,000 games with each player going first 50,000 times, black wins 50,212 times and white wins 49788 times. Black win percentage is 50.21% and white win percentage is 49.79%. BasicFour strategy gives a negligible edge over BasicThree, about a 0.2% increase in win percentage.   
+
+- The average game length is 39 turns
+
+- Games/min: 27,769
+- Games/hr: 1,666,130
+
+
+
+
 
 
 

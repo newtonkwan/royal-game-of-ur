@@ -1,4 +1,4 @@
-# BasicOne Strategy
+# BasicOne
 # In order of options:
 # 1) Prioritize getting a piece into the end tile 
 

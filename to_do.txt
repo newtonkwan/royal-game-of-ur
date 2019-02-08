@@ -15,9 +15,10 @@ Things to complete for the royal game of ur project
 - create an agent BasicThree: prioritize getting home, then sending pieces back, then randomly. 2/6/19
 - pit BasicThree vs. Random, BasicOne, and BasicTwo 2/7/19
 - implement computer vs computer into one file 2/7/19
+- add BasicThree into the player vs computer mode 2/7/19
+- create an agent BasicFour: prioritize sending pieces back, prioritize getting home, then randomly. 2/8/19
+- pit BasicFour vs. Random, BasicOne, BasicTwo, and BasicThree 2/8/19
 
-- add BasicThree into the player vs computer mode 
-- create an agent BasicFour: prioritize sending pieces back, prioritize getting home, then randomly. 
 - create an agent that plays using optimal play (meaning pick the move with the highest probability of winning)
 - create an agent that learns to play optimally using deep reinforcement learning 
 - combine simulation matchups into one file to make it easier to use 

@@ -1,7 +1,7 @@
-# BasicThree 
+# BasicFour
 # In order of options:
-# 1) Prioritize getting to the end tile 
-# 2) Prioritize sending a piece home
+# 1) Prioritize sending a piece home
+# 2) Prioritize getting to the end tile 
 # 3) Random play 
 
 # Notes
@@ -15,7 +15,7 @@ def choose_move_num(board, player, moves, roll):
 	strategy_move_nums = [] # initialize a list of the numbers of the desired moves
 
 	preference_one = None # keeps track if a move has move priority one
-	preference_two = None # keeps track if a move has move priority two 
+	preference_two = [] # keeps track if a move has move priority two 
 
 
 	no_pref_move = False # strategy_move_nums has no preferred moves 
@@ -23,6 +23,8 @@ def choose_move_num(board, player, moves, roll):
 	one_pref2_move = False # strategy_move_nums has one move and it is the preference_two_move
 	two_pref2_moves = False # strategy_move_nums has two moves and they are both preference_two_moves
 	one_pref1_one_pref2_moves = False # strategy_move_nums has two moves and one is pref_one and one is pref_two
+
+
 
 	# if there is only one move, choose that move 
 	'''
@@ -81,18 +83,23 @@ def choose_move_num(board, player, moves, roll):
 					if new_W1 == W1 - 1 and new_N1 == N1 + 2 and new_B0 == B0 - 1: # W1 -> N1 black; send black home
 						# if this move can't get you to the end tile, check if it can send a piece home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)
 					if new_N1 == N1 - 1 and new_N2 == N2 + 2 and new_B0 == B0 - 1: # N1 -> N2 black; send black home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)
 						
 					if new_N2 == N2 - 1 and new_N3 == N3 + 2 and new_B0 == B0 - 1: # N2 -> N3 black; send black home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)
 
 					if new_N3 == N3 - 1 and new_N4 == N4 + 2 and new_B0 == B0 - 1: # N3 -> N4 black; send black home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)
+				
 				if roll == 2:
 					if new_W3 == W3 + 1 and new_N4 == N4 - 1:
 						move_num = i + 1
@@ -100,15 +107,19 @@ def choose_move_num(board, player, moves, roll):
 						strategy_move_nums.append(move_num)
 					if new_W0 == W0 - 1 and new_N1 == N1 + 2 and new_B0 == B0 - 1: # W0 -> N1 black; send black home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)
 					if new_W1 == W1 - 1 and new_N2 == N2 + 2 and new_B0 == B0 - 1: # W1 -> N2 black; send black home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)		
 					if new_N1 == N1 - 1 and new_N3 == N3 + 2 and new_B0 == B0 - 1: # N1 -> N3 black; send black home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)		
 					if new_N2 == N2 - 1 and new_N4 == N4 + 2 and new_B0 == B0 - 1: # N2 -> N4 black; send black home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)	
 			if player == "b":
 				if roll == 1:
@@ -118,32 +129,42 @@ def choose_move_num(board, player, moves, roll):
 						strategy_move_nums.append(move_num)
 					if new_B1 == B1 + 1 and new_N1 == N1 - 2 and new_W0 == W0 + 1: # B1 -> N1 white; send white home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)
 					if new_N1 == N1 + 1 and new_N2 == N2 - 2 and new_W0 == W0 + 1: # N1 -> N2 white; send white home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)
 					if new_N2 == N2 + 1 and new_N3 == N3 - 2 and new_W0 == W0 + 1: # N2 -> N3 white; send white home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num) 
 					if new_N3 == N3 + 1 and new_N4 == N4 - 2 and new_W0 == W0 + 1: # N3 -> N4 white; send white home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)					
 				if roll == 2:
 					if new_B3 == B3 - 1 and new_N4 == N4 + 1:
 						move_num = i + 1
+						preference_one = move_num
 						strategy_move_nums.append(move_num)
 					if new_B0 == B0 + 1 and new_N1 == N1 - 2 and new_W0 == W0 + 1: # B0 -> N1 white; send white home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)
 					if new_B1 == B1 + 1 and new_N2 == N2 - 2 and new_W0 == W0 + 1: # B1 -> N2 white; send white home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)		
 					if new_N1 == N1 + 1 and new_N3 == N3 - 2 and new_W0 == W0 + 1: # N1 -> N3 white; send white home
 						move_num = i + 1
+						preference_two.append(move_num)
 						strategy_move_nums.append(move_num)		
 					if new_N2 == N2 + 1 and new_N4 == N4 - 2 and new_W0 == W0 + 1: # N2 -> N4 white; send white home
 						move_num = i + 1
-						strategy_move_nums.append(move_num)										
+						preference_two.append(move_num)
+						strategy_move_nums.append(move_num)				
+								
 
 	# if no moves in strategy_move_nums, choose a random move number
 	if len(strategy_move_nums) == 0: 
@@ -152,21 +173,23 @@ def choose_move_num(board, player, moves, roll):
 
 	# if only one move possible from strategy_move_nums, choose that move 
 	if len(strategy_move_nums) == 1:
-		move_num = random.choice(strategy_move_nums) # choose the only move number in strategy_move_nums
+		move_num = strategy_move_nums[0] # choose the only move number in strategy_move_nums
 		if move_num == preference_one:
 			one_pref1_move = True
-		if move_num != preference_one:
+		if move_num in preference_two:
 			one_pref2_move = True
 
-	# if two moves possible from the desired strategy_move_nums, choose randomly 
-	if len(strategy_move_nums) == 2:
-		if preference_one != None:
-			move_num = preference_one
+	# if two moves possible from the desired strategy_move_nums, choose preference 2 first 
+	if len(strategy_move_nums) > 1:
+		if len(preference_two) == 1: 
+			# choose pref2 over pref1 
+			move_num = preference_two[0]
 			one_pref1_one_pref2_moves = True
-		else:
-			move_num = random.choice(strategy_move_nums) # randomly choose the move number.
-			two_pref2_moves = True
 
+		if len(preference_two) > 1:
+			# choose randomly between pref2 options 
+			move_num = random.choice(preference_two)
+			two_pref2_moves = True
 			'''
 		df = pd.DataFrame(board, index = ["", "", ""])
 		print(df)
@@ -177,5 +200,6 @@ def choose_move_num(board, player, moves, roll):
 			print(df.to_string(header=False))
 			print()
 			'''
-		
+	#move_possibilities = [no_pref_move_poss, one_pref1_move_poss, one_pref2_move_poss, two_pref2_moves_poss, one_pref1_one_pref2_moves_poss]
+	move_choices = [no_pref_move, one_pref1_move, one_pref2_move, two_pref2_moves, one_pref1_one_pref2_moves]
 	return move_num, no_pref_move, one_pref1_move, one_pref2_move, two_pref2_moves, one_pref1_one_pref2_moves

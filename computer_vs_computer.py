@@ -5,6 +5,7 @@ from game_logic import init_board, game_rules, roll_die, possible_moves, first_p
 import basic_one
 import basic_two
 import basic_three
+import basic_four
 import random 
 import time
 
@@ -32,8 +33,9 @@ num_two_pref2_moves = 0 # number of moves in strategy_move_nums with two moves a
 num_one_pref1_one_pref2_moves = 0 # number of moves in strategy_move_nums with two moves and one is pref_one and one is pref_two
 
 # select agents 
-agent_1_dict, agent_2_dict = choose_two_computer_agents() # dictionaries Ex. {"Random": "b"}, {"BasicOne":"w"}
+agent_1_dict, agent_2_dict = choose_two_computer_agents() # dictionaries Ex. {"b": "Random"}, {"w":"BasicOne"}
 
+#agent_1_dict, agent_2_dict = {"b" : "BasicFour"}, {"w" : "BasicThree"}
 # agent information
 agent_one_color = list(agent_1_dict.keys())[0]# agent one will always be black 
 agent_one = list(agent_1_dict.values())[0] 
@@ -115,14 +117,14 @@ for i in range(num_games):
 			current_player = change_player(current_player)
 			continue
 
-		'''
+		
 		# Testing statistic
 		# number of possible moves 
 		if len(moves) == 1:
 			num_one_moves += 1
 		if len(moves) == 2:
 			num_two_moves += 1
-		'''
+		
 		# Choose strategy based on the agent 
 		
 		if current_player == "b":
@@ -139,6 +141,11 @@ for i in range(num_games):
 			if agent_1_dict[current_player] == "BasicThree":
 				what_move  = basic_three.choose_move_num(current_board, current_player, moves, current_roll)
 				move_num = what_move[0]		
+			# BasicFour
+			if agent_1_dict[current_player] == "BasicFour":
+				what_move  = basic_four.choose_move_num(current_board, current_player, moves, current_roll)
+				move_num = what_move[0]		
+
 
 		if current_player == "w":
 			# Random
@@ -154,7 +161,32 @@ for i in range(num_games):
 			if agent_2_dict[current_player] == "BasicThree":
 				what_move  = basic_three.choose_move_num(current_board, current_player, moves, current_roll)
 				move_num = what_move[0]		
+			# BasicFour
+			if agent_2_dict[current_player] == "BasicFour":
+				what_move  = basic_four.choose_move_num(current_board, current_player, moves, current_roll)
+				move_num = what_move[0]		
+
+		'''
+		# tests for BasicFour specific testings 
+		move_num = what_move[0]
+		no_pref_move = what_move[1]
+		one_pref1_move = what_move[2]
+		one_pref2_move = what_move[3]
+		two_pref2_moves = what_move[4]
+		one_pref1_one_pref2_moves = what_move[5]
 		
+		if no_pref_move == True:
+			num_no_pref_move += 1
+		if one_pref1_move == True:
+			num_one_pref1_move += 1
+		if one_pref2_move == True:
+			num_one_pref2_move += 1
+		if two_pref2_moves == True:
+			num_two_pref2_moves += 1
+		if one_pref1_one_pref2_moves == True:
+			num_one_pref1_one_pref2_moves += 1
+
+		'''
 					
 		move_choice = choose_move(move_num, moves) # choose the desired move 
 		current_board = move_choice # change the current board to the new board according to move choice
@@ -176,6 +208,28 @@ for i in range(num_games):
 
 time_end = time.time()
 time_taken = time_end - time_start
+
+'''
+# BasicFour testing game statistics 
+num_turns_with_poss_moves = num_one_moves + num_two_moves
+num_turns_with_pref_moves = num_one_pref1_move + num_one_pref2_move + num_two_pref2_moves + num_one_pref1_one_pref2_moves
+print("BasicThree game statistics")
+print("--------------------------")
+print("Number of turns with possible moves:", num_turns_with_poss_moves)
+print("Number of turns with no possible preference moves:", num_no_pref_move)
+print("Number of turns with at least one preference moves:", num_turns_with_pref_moves)
+print("Percent turns with no preference moves: {:.2f}%" .format(num_no_pref_move / num_turns_with_poss_moves * 100))
+print("Percent turns with preference moves: {:.2f}%" .format(num_turns_with_pref_moves / num_turns_with_poss_moves * 100))
+print("Percent turns choosing preference one moves: {:.2f}%" .format((num_one_pref1_move + num_one_pref1_one_pref2_moves) / num_turns_with_poss_moves *100))
+print("Percent turns choosing preference two moves: {:.2f}%" .format((num_one_pref2_move + num_two_pref2_moves) / num_turns_with_poss_moves *100))
+print("Number of turns with at least one possible preference one move:", num_one_pref1_move )
+print("Number of turns with at least one possible preference two move:", num_one_pref2_move + num_two_pref2_moves + num_one_pref1_one_pref2_moves)
+print("Number of turns with one possible preference one moves:", num_one_pref1_move)
+print("Number of turns with one possible preference two moves:", num_one_pref2_move)
+print("Number of turns with two possible preference two moves:", num_two_pref2_moves)
+print("Number of turns with one possible preference one and one possible preference two moves:", num_one_pref1_one_pref2_moves)
+print("Number of missing moves:", num_one_moves + num_two_moves - num_no_pref_move - num_one_pref1_move - num_one_pref2_move - num_two_pref2_moves - num_one_pref1_one_pref2_moves)
+'''
 
 # general game statistics 
 print()

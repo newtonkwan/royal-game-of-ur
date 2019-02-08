@@ -9,6 +9,13 @@
 #### How to simulate
 - Computer vs. Computer: Run 'python computer_vs_computer.py'
 
+##### 2.8.19 
+- created BasicFour: an agent that is a combination of BasicOne and BasicTwo, prioritizing BasicTwo strategy
+- discovered BasicFour strategy is better than random (7.5% win rate increase)
+- discovered BasicFour strategy is better than BasicOne (4.5% win rate increase)
+- discovered BasicFour strategy is better than BasicTwo (3% win rate increase)
+- discovered BasicFour strategy is only slightly better than BasicThree (0.5% win rate increase) 
+
 ##### 2.7.19
 - added 'computer_vs_computer.py', which allows simulations of any combination of agents 
 - moved old test / obselete files into old_test_files folder 

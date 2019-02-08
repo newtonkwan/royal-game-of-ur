@@ -94,6 +94,7 @@ def choose_two_computer_agents():
 	print("BasicOne")
 	print("BasicTwo")
 	print("BasicThree")
+	print("BasicFour")
 	print()
 	agent_1_dict = {}
 	agent_2_dict = {}
@@ -112,7 +113,10 @@ def choose_two_computer_agents():
 			if agent_one == 'basicthree' or agent_one == "basicThree" or agent_one == "BasicThree":
 				agent_1_dict['b'] = "BasicThree"
 				break
-			if agent_one != 'random' or agent_one != 'Random' or agent_one != 'basicone' or agent_one != "basicOne" or agent_one != "BasicOne" or agent_one != 'basictwo' or agent_one != "basicTwo" or agent_one != "BasicTwo" or agent_one != 'basicthree' or agent_one != "basicThree" or agent_one != "BasicThree":
+			if agent_one == 'basicfour' or agent_one == "basicFour" or agent_one == "BasicFour":
+				agent_1_dict['b'] = "BasicFour"
+				break
+			if agent_one != 'random' or agent_one != 'Random' or agent_one != 'basicone' or agent_one != "basicOne" or agent_one != "BasicOne" or agent_one != 'basictwo' or agent_one != "basicTwo" or agent_one != "BasicTwo" or agent_one != 'basicthree' or agent_one != "basicThree" or agent_one != "BasicThree" or agent_one != 'basicfour' or agent_one != "basicFour" or agent_one != "BasicFour":
 				print("Oops! Invalid command. Try again")
 		except ValueError:
 			print("Oops! Invalid command. Try again")
@@ -132,7 +136,10 @@ def choose_two_computer_agents():
 			if agent_two == "basicthree" or agent_two == "basicThree" or agent_two == "BasicThree":
 				agent_2_dict['w'] = "BasicThree"
 				break
-			if agent_two != 'random' or agent_two != 'Random' or agent_two != 'basicone' or agent_two != "basicOne" or agent_two != "BasicOne" or agent_two != 'basictwo' or agent_two != "basicTwo" or agent_two != "BasicTwo" or agent_two != 'basicthree' or agent_two != "basicThree" or agent_two != "BasicThree":
+			if agent_two == 'basicfour' or agent_two == "basicFour" or agent_two == "BasicFour":
+				agent_2_dict['w'] = "BasicFour"
+				break
+			if agent_two != 'random' or agent_two != 'Random' or agent_two != 'basicone' or agent_two != "basicOne" or agent_two != "BasicOne" or agent_two != 'basictwo' or agent_two != "basicTwo" or agent_two != "BasicTwo" or agent_two != 'basicthree' or agent_two != "basicThree" or agent_two != "BasicThree" or agent_two != 'basicfour' or agent_two != "basicFour" or agent_two != "BasicFour":
 				print("Oops! Invalid command. Try again")
 		except ValueError:
 			print("Oops! Invalid command. Try again")
